@@ -1,0 +1,48 @@
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.input {
+  font: var(--font-m);
+  outline: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  padding: 22px 0 10px;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .inputPlaceholder {
+    cursor: text;
+    top: 20px;
+    font: var(--font-m);
+  }
+
+  &:focus {
+    ~ .inputPlaceholder {
+      position: absolute;
+      top: 0;
+      display: block;
+      color: var(--secondary-color);
+      font: var(--font-s);
+      font-weight: bold;
+    }
+
+    border-color: var(--secondary-color);
+  }
+}
+
+.inputPlaceholder {
+  position: absolute;
+  top: 0;
+  display: block;
+  font: var(--font-s);
+  color: var(--border-color);
+  transition: all 0.2s;
+}

@@ -1,6 +1,5 @@
 body {
   font: var(--font-m);
-  color: var(--text-color);
 }
 
 .app {
@@ -9,6 +8,8 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--background-main);
 }
 
 .contentPage {

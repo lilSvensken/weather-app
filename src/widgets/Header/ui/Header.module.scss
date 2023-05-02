@@ -1,5 +1,15 @@
-.header {
+.content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0;
+}
+
+.locationWrpapper {
+  display: flex;
+  align-items: center;
+}
+
+.btnGeolocation {
+  margin-left: 20px;
 }
