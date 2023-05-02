@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { Input } from 'shared/ui/Input';
 import { cn } from 'shared/lib/helpers/classNames';
-import Button from 'shared/ui/Button/ui/Button';
+import { Button } from 'shared/ui/Button';
 import GeolocationIcon from 'shared/assets/icons/geolocation.svg';
 import useGeolocation from 'app/providers/GeolocationProvider/lib/useGeolocation';
+import { MetricTemperatureSelect } from 'widgets/MetricTemperatureSelect';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -28,6 +29,8 @@ export const Header: FC<HeaderProps> = (
               <GeolocationIcon fill="#000" />
             </Button>
           </div>
+
+          <MetricTemperatureSelect />
         </div>
       </div>
     </div>

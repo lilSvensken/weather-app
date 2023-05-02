@@ -1,0 +1,10 @@
+@import "shared/styles/mixins";
+
+.select {
+  @include reset-base-styles;
+
+  cursor: pointer;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius-m);
+  font: var(--font-line-m);
+}
