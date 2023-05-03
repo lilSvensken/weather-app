@@ -31,7 +31,6 @@ export const Header: FC<HeaderProps> = (
               <GeolocationIcon fill="#000" />
             </Button>
           </div>
-
           <div className={ cls.switchersWrapper }>
             <ThemeSwitcher className={ cls.switcherItem } />
             <MetricTemperatureSelect className={ cls.switcherItem } />

@@ -2,6 +2,8 @@ import { ChangeEvent, FC } from 'react';
 import { cn } from 'shared/lib/helpers/classNames';
 import SunIcon from 'shared/assets/icons/sun.svg';
 import MoonIcon from 'shared/assets/icons/moon.svg';
+import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import useTheme from 'app/providers/ThemeProvider/lib/useTheme';
 import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
@@ -13,14 +15,10 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (
     className,
   },
 ) => {
+  const { theme, changeTheme } = useTheme();
+
   const onChangeTheme = (isDark: boolean) => {
-    if (isDark) {
-      // eslint-disable-next-line no-console
-      console.log('Тёмная тема');
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('Светлая тема');
-    }
+    changeTheme(isDark ? Theme.Dark : Theme.Light);
   };
 
   return (
@@ -29,6 +27,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (
         type="checkbox"
         className={ cls.input }
         name="theme-switcher"
+        checked={ theme === Theme.Dark }
         onChange={ (e: ChangeEvent<HTMLInputElement>) => onChangeTheme(e.target.checked) }
       />
       <div className={ cls.iconsWrapper }>

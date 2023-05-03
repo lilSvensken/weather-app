@@ -5,8 +5,7 @@ import { Header } from 'widgets/Header';
 
 const App = () => {
   return (
-    // app-light-theme будет подставляться при переключении темы на светлую
-    <div className="app app-light-theme">
+    <div className="app">
       <Header />
       <Suspense fallback={ <PageLoader /> }>
         <AppRouter />

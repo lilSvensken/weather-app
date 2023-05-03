@@ -5,7 +5,12 @@ interface Geolocation {
   lon: number;
 }
 
-function useGeolocation() {
+interface UseGeolocationResult {
+  geolocation: Geolocation;
+  updateGeolocation: () => void;
+}
+
+function useGeolocation(): UseGeolocationResult {
   const [geolocation, setGeolocation] = useState<Geolocation | undefined>();
 
   // todo заменить alerts на функционал (вывод уведомлений и поиск погоды по новой геолокации)
