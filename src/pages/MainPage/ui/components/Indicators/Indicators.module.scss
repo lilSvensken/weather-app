@@ -1,0 +1,24 @@
+.indicatorsItem {
+  display: flex;
+
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.iconFake {
+  width: 30px;
+  height: 30px;
+  background-color: var(--secondary-color);
+  flex: 0 0 30px;
+  margin-right: 12px;
+  margin-top: 8px;
+}
+
+.itemInfoTitle {
+  font: var(--font-line-s);
+}
+
+.itemInfoValue {
+  font: var(--font-line-m);
+}
