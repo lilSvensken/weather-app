@@ -13,3 +13,16 @@
 .btnGeolocation {
   margin-left: 20px;
 }
+
+.switchersWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 100%;
+}
+
+.switcherItem {
+  & + & {
+    margin-left: 30px;
+  }
+}

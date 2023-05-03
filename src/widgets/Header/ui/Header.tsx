@@ -5,6 +5,8 @@ import { Button } from 'shared/ui/Button';
 import GeolocationIcon from 'shared/assets/icons/geolocation.svg';
 import useGeolocation from 'app/providers/GeolocationProvider/lib/useGeolocation';
 import { MetricTemperatureSelect } from 'widgets/MetricTemperatureSelect';
+import ThemeSwitcher from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
+import { LangSelect } from 'widgets/LangSelect';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -30,7 +32,11 @@ export const Header: FC<HeaderProps> = (
             </Button>
           </div>
 
-          <MetricTemperatureSelect />
+          <div className={ cls.switchersWrapper }>
+            <ThemeSwitcher className={ cls.switcherItem } />
+            <MetricTemperatureSelect className={ cls.switcherItem } />
+            <LangSelect className={ cls.switcherItem } />
+          </div>
         </div>
       </div>
     </div>

@@ -2,8 +2,8 @@
 
 .select {
   @include reset-base-styles;
-
   cursor: pointer;
+  height: 36px;
   border: 1px solid var(--secondary-color);
   border-radius: var(--border-radius-m);
   font: var(--font-line-m);
