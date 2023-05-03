@@ -13,12 +13,14 @@ export const Select: FC<SelectProps> = (
     className,
     options,
     defaultValue,
+    ...otherProps
   },
 ) => {
   return (
     <select
       className={ cn([cls.select, className]) }
       defaultValue={ defaultValue }
+      { ...otherProps }
     >
       {
         options.map((option) => (
