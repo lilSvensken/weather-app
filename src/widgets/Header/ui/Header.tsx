@@ -3,7 +3,7 @@ import { Input } from 'shared/ui/Input';
 import { cn } from 'shared/lib/helpers/classNames';
 import { Button } from 'shared/ui/Button';
 import GeolocationIcon from 'shared/assets/icons/geolocation.svg';
-import useGeolocation from 'app/providers/GeolocationProvider/lib/useGeolocation';
+import useGeolocation from 'features/lib/useGeolocation';
 import { MetricTemperatureSelect } from 'widgets/MetricTemperatureSelect';
 import ThemeSwitcher from 'widgets/ThemeSwitcher/ui/ThemeSwitcher';
 import { LangSelect } from 'widgets/LangSelect';
@@ -27,8 +27,7 @@ export const Header: FC<HeaderProps> = (
           <div className={ cls.locationWrpapper }>
             <Input placeholder="Поиск города" />
             <Button className={ cls.btnGeolocation } onClick={ updateGeolocation }>
-              {/* менять fill в зависимости от темы */}
-              <GeolocationIcon fill="#000" />
+              <GeolocationIcon className={ cls.geolocationIcon } />
             </Button>
           </div>
           <div className={ cls.switchersWrapper }>
