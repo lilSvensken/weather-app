@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import ThemeProvider from 'app/providers/ThemeProvider/ui/ThemeProvider';
+import { Provider } from 'react-redux';
+import { store } from 'app/store';
 import App from './app/App';
 import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
@@ -13,7 +15,9 @@ root.render(
   <BrowserRouter>
     <ErrorBoundary>
       <ThemeProvider>
-        <App />
+        <Provider store={ store }>
+          <App />
+        </Provider>
       </ThemeProvider>
     </ErrorBoundary>
   </BrowserRouter>,
