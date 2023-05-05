@@ -1,6 +1,9 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { cn } from 'shared/lib/helpers/classNames';
 import { MOCK_DATA } from 'pages/MainPage/api/getWeatherApi';
+import { fetchWeather } from 'app/providers/store/action-creators/weather';
+import { useActions } from 'app/hooks/useActions';
+import { useTypedSelector } from 'app/hooks/useTypedSelector';
 import cls from './Temperature.module.scss';
 
 interface TemperatureProps {
@@ -13,6 +16,12 @@ export const Temperature: FC<TemperatureProps> = (
   },
 ) => {
   const weatherMock = MOCK_DATA;
+  const { weather, error, loading } = useTypedSelector((state) => state.weather);
+  const { fetchWeather } = useActions();
+
+  useEffect(() => {
+    fetchWeather();
+  }, []);
 
   const getWeatherIcon = () => {
     const code: string = weatherMock.weather[0].icon;
@@ -30,6 +39,7 @@ export const Temperature: FC<TemperatureProps> = (
       <div className={ cls.iconWrapper }>
         {getWeatherIcon()}
       </div>
+      {weather?.id}
 
       <div className={ cls.mainValue }>
         {`${Math.round(weatherMock.main.temp)}°С`}
