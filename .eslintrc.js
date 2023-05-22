@@ -28,6 +28,7 @@ module.exports = {
     indent: [2, 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'react/jsx-curly-spacing': [2, { when: 'always', allowMultiline: false }],
+    'operator-linebreak': ['error', 'after'],
     'arrow-body-style': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -48,6 +49,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,
