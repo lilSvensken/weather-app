@@ -18,7 +18,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     element: <MainPage />,
   },
   [AppRoutes.NOT_FOUND]: {
-    path: RoutePath.main,
+    path: RoutePath.notFound,
     element: <NotFoundPage />,
   },
 };

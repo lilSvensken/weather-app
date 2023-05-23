@@ -7,7 +7,10 @@ export const NotFoundPage: FC = () => {
 
   return (
     <div className={ cls.notFoundPage }>
-      { t('Страница не найдена') }
+      <h1 className={ cls.caption }>
+        { t('Страница не найдена') }
+      </h1>
+      <img src="gif/so-so-sorry.gif" alt="" />
     </div>
   );
 };

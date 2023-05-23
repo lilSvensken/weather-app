@@ -49,7 +49,7 @@ export const Temperature: FC<TemperatureProps> = (
               {`${Math.round(currentWeather.main.temp)}°С`}
             </div>
             <div className={ cls.secondaryValue }>
-              {`Ощущается как ${Math.round(currentWeather.main.feels_like)}°С`}
+              {`Ощущается как ${Math.round(currentWeather.main.feelsLike)}°С`}
             </div>
             <div className={ cls.weatherType }>
               {currentWeather.weather[0].description}
