@@ -1,10 +1,10 @@
 import {
   FC, ReactNode, useEffect, useMemo, useState,
 } from 'react';
+import { LS_THEME_KEY } from 'shared/consts/localStorageKeys';
 import { Theme, ThemeContext } from '../lib/ThemeContext';
-import { LOCAL_STORAGE_THEME_KEY } from '../lib/useTheme';
 
-const LS_THEME = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme);
+const LS_THEME = (localStorage.getItem(LS_THEME_KEY) as Theme);
 
 interface ThemeProviderProps {
   children: ReactNode;

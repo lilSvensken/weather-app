@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Input } from 'shared/ui/Input';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import { Button } from 'shared/ui/Button';
 import GeolocationIcon from 'shared/assets/icons/geolocation.svg';
 import useGeolocation from 'features/lib/useGeolocation';

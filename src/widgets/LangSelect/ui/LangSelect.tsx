@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Options } from 'shared/interfaces/Options.interfaces';
 import { Select } from 'shared/ui/Select';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import cls from './LangSelect.module.scss';
 
 export enum Languages {

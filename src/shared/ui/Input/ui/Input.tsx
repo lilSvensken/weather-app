@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes } from 'react';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import cls from './Input.module.scss';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {

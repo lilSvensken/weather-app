@@ -1,5 +1,5 @@
 import { ChangeEvent, FC } from 'react';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import SunIcon from 'shared/assets/icons/sun.svg';
 import MoonIcon from 'shared/assets/icons/moon.svg';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';

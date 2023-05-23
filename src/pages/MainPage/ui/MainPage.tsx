@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import { useDispatch } from 'react-redux';
 import {
   fetchGetCurrentWeather,

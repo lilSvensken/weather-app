@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { cn } from 'shared/lib/helpers/classNames';
+import { cn } from 'shared/lib/classNames';
 import cls from './PageLoader.module.scss';
 
 interface PageLoaderProps {
