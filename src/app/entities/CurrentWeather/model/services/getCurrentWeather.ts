@@ -1,7 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { CurrentWeatherSchema } from 'app/entities/CurrentWeather';
-import { currentWeatherActions } from 'app/entities/CurrentWeather/model/slice/currentWeatherSlice';
+import { CurrentWeatherSchema, currentWeatherActions } from 'app/entities/CurrentWeather';
 import { HTTP_METHOD, makeAxiosRequest } from 'shared/lib/makeRequest';
 import { WEATHER_API_ID } from 'shared/consts/localStorageKeys';
 

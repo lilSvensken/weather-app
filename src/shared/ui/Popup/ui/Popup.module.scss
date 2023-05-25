@@ -1,0 +1,36 @@
+.popup {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  z-index: var(--z-index-popup);
+  background-color: rgb(0 0 0 / 23%);
+  display: flex;
+
+  &:not(.isOpen) {
+    display: none;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.corner {
+    justify-content: flex-end;
+
+    .content {
+      top: 20px;
+      right: 20px;
+      width: 300px;
+      min-height: 100px;
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  background-color: var(--text-color);
+  color: var(--text-invert-color);
+  border-radius: var(--border-radius-l);
+  padding: 20px;
+}
