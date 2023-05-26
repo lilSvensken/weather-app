@@ -20,16 +20,20 @@ export const currentWeatherSlice = createSlice({
     builder
       // pending — начал выполняться async action, но данные ещё не пришли
       .addCase(fetchGetCurrentWeather.pending, (state) => {
+        console.log('pending');
         state.error = undefined;
         state.loading = true;
       })
       // fulfilled — успех
-      .addCase(fetchGetCurrentWeather.fulfilled, (state) => {
+      .addCase(fetchGetCurrentWeather.fulfilled, (state, action) => {
+        console.log('успех');
+        console.log(action);
         state.loading = false;
         state.error = undefined;
       })
       // rejected — ошибка
       .addCase(fetchGetCurrentWeather.rejected, (state, action) => {
+        console.log('ошибка');
         state.loading = false;
         state.error = action.payload;
       });

@@ -18,12 +18,6 @@ interface PropsRequest {
   params?: Record<string, string | number>
 }
 
-interface CommonResponse {
-  data: any;
-  status: number;
-  headers: object;
-}
-
 export function makeAxiosRequest(
   {
     url = undefined,
@@ -35,7 +29,7 @@ export function makeAxiosRequest(
       'Content-Type': 'application/json',
     },
   }: PropsRequest,
-): Promise<CommonResponse> {
+): Promise<Record<string, any>> {
   const token = localStorage.getItem(LS_TOKEN);
   if (token) {
     headers.Authorization = `Bearer ${token}`;
@@ -48,6 +42,14 @@ export function makeAxiosRequest(
     data,
     params,
   })
-    .then((res) => camelizeObjFields(res))
-    .catch((error) => error);
+    .then((response: Record<string, any>) => {
+      if (response.data) {
+        response.data = camelizeObjFields(response.data);
+        return response;
+      }
+      throw new Error(response.message);
+    })
+    .catch((error) => {
+      return error;
+    });
 }

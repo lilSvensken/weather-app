@@ -1,5 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { CurrentWeatherSchema, currentWeatherActions } from 'app/entities/CurrentWeather';
+import {
+  currentWeatherActions,
+  CurrentWeatherModel,
+  CurrentWeatherSchema,
+} from 'app/entities/CurrentWeather';
 import { HTTP_METHOD, makeAxiosRequest } from 'shared/lib/makeRequest';
 import { WEATHER_API_ID } from 'shared/consts/localStorageKeys';
 
@@ -11,7 +15,7 @@ export const fetchGetCurrentWeather = createAsyncThunk<CurrentWeatherSchema>(
   'weather/getCurrentWeather',
   (_, thunkAPI) => {
     return makeAxiosRequest({
-      url: '/data/2.5/weather',
+      url: '/data/2.5/weather11',
       method: HTTP_METHOD.GET,
       params: {
         q: CITY,
@@ -27,11 +31,9 @@ export const fetchGetCurrentWeather = createAsyncThunk<CurrentWeatherSchema>(
         }
         return response.data;
       })
-      .catch((e) => {
-        // todo
-        // eslint-disable-next-line no-console
-        console.error(e);
-        return thunkAPI.rejectWithValue('error');
+      .catch((error) => {
+        console.log(2, error);
+        return thunkAPI.rejectWithValue(error);
       });
   },
 );
