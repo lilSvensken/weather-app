@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { cn } from 'shared/lib/classNames';
 import { Popup, POPUP_THEME } from 'shared/ui/Popup';
+import { cn } from 'shared/lib/classNames';
 import cls from './StatusPopup.module.scss';
 
 interface statusPopupProps {
@@ -18,13 +18,16 @@ export const StatusPopup: FC<statusPopupProps> = (
 ) => {
   return (
     <Popup
-      className={ cls.statusPopup }
+      className={ cn([className, cls.statusPopup]) }
       isOpen={ isOpen }
       onClose={ onClose }
       theme={ POPUP_THEME.CORNER }
       lazy
     >
-      Popup
+      <div className={ cls.statusPopupContent }>
+        Popup
+        <button onClick={ onClose }>x</button>
+      </div>
     </Popup>
   );
 };
